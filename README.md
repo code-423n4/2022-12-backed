@@ -82,13 +82,13 @@ As an analogy, for those familiar with perpetuals, we can say that papr adapts t
 We *very strongly* encourage everyone to read our [whitepaper](https://backed.mirror.xyz/8SslPvU8of0h-fxoo6AybCpm51f30nd0qxPST8ep08c) to understand more!
 
 ## In Scope
-Everything in `src/` is in scope. The main contracts are `PaprController` and `UniswapOracleFundingRateController`.
+Everything in `src/` is in scope. The main contracts are `PaprController` and `UniswapOracleFundingRateController` and `NFTEDA`. `PaprController` inherits from `UniswapOracleFundingRateController` and `NFTEDA`.
 
-`UniswapOracleFundingRateController` is responsible for updating Target based on changes in the papr:underlying trading price on Uniswap. 
+`UniswapOracleFundingRateController` contract functions are used for updating Target based on changes in the papr:underlying trading price on Uniswap, and otherwise reporting on Target and Mark. 
 
-`PaprController` handles the deposit and withdraw of NFTs, the minting and burning of papr, and liquidation auctions. It also has some convenience functions that allow using underlying to purchase papr and reduce debt and also immediately swapping newly minted papr for underlying. 
+The `NFTEDA` contract functions are only used for liquidation auctions. `ReservoirOracleUnderwriter` is used for handling oracle messages for NFT values, which are used when minting debt (papr), withdrawing collateral, or liquidating vaults.
 
-The `NFTEDA` contracts are only used for liquidation auctions. `ReservoirOracleUnderwriter` is used for handling oracle messages for NFT values, which are used when minting debt (papr), withdrawing collateral, or liquidating vaults. 
+In addition to inheriting the above, `PaprController` handles the deposit and withdraw of NFTs, the minting and burning of papr, and liquidation auctions (via `NFTEDA`). It also has some convenience functions that allow using underlying to purchase papr and reduce debt and also immediately swapping newly minted papr for underlying. 
 
 ## Out of Scope
 There are a number of known limitations that are out of scope for the contest 
