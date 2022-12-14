@@ -30,8 +30,8 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 - [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-  - [ ] When linking, please provide all links as full absolute links versus relative links
-  - [ ] All information should be provided in markdown format (HTML does not render on Code4rena.com)
+  - [x ] When linking, please provide all links as full absolute links versus relative links
+  - [x ] All information should be provided in markdown format (HTML does not render on Code4rena.com)
 - [ ] Under the "Scope" heading, provide the name of each contract and:
   - [ ] source lines of code (excluding blank lines and comments) in each
   - [ ] external contracts called in each
@@ -85,16 +85,16 @@ We *very strongly* encourage everyone to read our [whitepaper](https://backed.mi
 Everything in `src/` is in scope. Below is an overview of the non-interface contracts. 
 | Contract Name      | SLOC        | Descripton |
 | -----------        | ----------- | ----------- |
-| [PaprController](https://github.com/with-backed/papr/blob/master/src/PaprController.sol)     | 402       | Inherits `NFTEDAStarterIncentive`, `UniswapOracleFundingRateController`, and `ReservoirOracleUnderwriter`. Facilitates deposit and withdrawal of NFTs, minting and burning of papr, and liquidation auctions      |
+| [PaprController](https://github.com/with-backed/papr/blob/master/src/PaprController.sol)     | 402       | Inherits `NFTEDAStarterIncentive`, `UniswapOracleFundingRateController`, and `ReservoirOracleUnderwriter`. Facilitates deposit and withdrawal of NFTs, minting and burning of papr, and liquidation auctions.      |
 | [UniswapOracleFundingRateController](https://github.com/with-backed/papr/blob/master/src/UniswapOracleFundingRateController.sol)     | 110       | Source of `Target` and `Mark` values. Updates `Target` based on how the papr:underlying pool is trading on Uniswap.|
-| [ReservoirOracleUnderwriter](https://github.com/with-backed/papr/blob/master/src/ReservoirOracleUnderwriter.sol)     | 79       | Validates and unpacks oracles messages from [Reservoir](https://github.com/reservoirprotocol/oracle)|
+| [ReservoirOracleUnderwriter](https://github.com/with-backed/papr/blob/master/src/ReservoirOracleUnderwriter.sol)     | 79       | Validates and unpacks oracles messages from [Reservoir](https://github.com/reservoirprotocol/oracle).|
 | [PaprToken](https://github.com/with-backed/papr/blob/master/src/PaprToken.sol)     | 23       | Simple ERC20 token that can be minted and burned by its deployer. |
-| [NFTEDA](https://github.com/with-backed/papr/blob/master/src/NFTEDA/NFTEDA.sol)     | 73       | (NFT Exponential Decay Auction) Facilitates exponential price decay Dutch auctions for NFTs|
+| [NFTEDA](https://github.com/with-backed/papr/blob/master/src/NFTEDA/NFTEDA.sol)     | 73       | (NFT Exponential Decay Auction) Facilitates exponential price decay Dutch auctions for NFTs.|
 | [NFTEDAStarterIncentive](https://github.com/with-backed/papr/blob/master/src/NFTEDA/extensions/NFTEDAStarterIncentive.sol)     | 44       | Instance of NFTEDA that offers an auction discount to the starter of the auction. |
 | [EDAPrice](https://github.com/with-backed/papr/blob/master/src/NFTEDA/libraries/EDAPrice.sol)     | 18       | A library for computing the current price of an exponential price decay auction.|
 | [UniswapHelpers](https://github.com/with-backed/papr/blob/master/src/libraries/UniswapHelpers.sol)     | 65       | Library with various helpers for interacting with Uniswap v3.|
-| [OracleLibrary](https://github.com/with-backed/papr/blob/master/src/libraries/OracleLibrary.sol)     | 47       | Library with various oracle methods, all adapted from [Uniswap/v3-periphery/OracleLibrary](https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/OracleLibrary.sol)|
-| [PoolAddress](https://github.com/with-backed/papr/blob/master/src/libraries/PoolAddress.sol)     | 30       | Library taken [from Uniswap/v3-periphery](https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/PoolAddress.sol) with a single line change for solc >= 0.8.0 compatibility|
+| [OracleLibrary](https://github.com/with-backed/papr/blob/master/src/libraries/OracleLibrary.sol)     | 47       | Library with various oracle methods, all adapted from [Uniswap/v3-periphery/OracleLibrary](https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/OracleLibrary.sol).|
+| [PoolAddress](https://github.com/with-backed/papr/blob/master/src/libraries/PoolAddress.sol)     | 30       | Library taken [from Uniswap/v3-periphery](https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/PoolAddress.sol) with a single line change for solc >= 0.8.0 compatibility.|
 
 ## Out of Scope
 There are a number of known limitations that are out of scope for the contest 
