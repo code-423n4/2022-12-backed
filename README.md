@@ -66,54 +66,41 @@ The C4audit output for the contest can be found [here](add link to report) withi
 
 [ ⭐️ SPONSORS ADD INFO HERE ]
 
-# Overview
+## Overview
 
-*Please provide some context about the code being audited, and identify any areas of specific concern in reviewing the code. (This is a good place to link to your docs, if you have them.)*
+Papr facilitates NFT-backed loans. Borrowers deposit allowlisted NFT collateral and mint papr, which can then be exchanged on Uniswap for some other asset. Papr interest rates and the papr trading price are in a constant feedback loop. Interest rates are programmatically updated on chain as a function of papr’s trading price on Uniswap (the lower the trading price, the higher the interest to borrowers), and interest rates in turn affect the trading price, as borrowers open and close loans in response to rates.
 
-# Scope
 
-*List all files in scope in the table below -- and feel free to add notes here to emphasize areas of focus.*
+![loop_diagram](https://user-images.githubusercontent.com/6678357/207438772-5bddff19-2b25-42d0-8eee-013fb8847fd2.png)
 
-| Contract | SLOC | Purpose | Libraries used |  
-| ----------- | ----------- | ----------- | ----------- |
-| contracts/folder/sample.sol | 123 | This contract does XYZ | [`@openzeppelin/*`](https://openzeppelin.com/contracts/) |
+Interest accrues to the value of papr itself: over time, new borrowers are allowed less papr for the exact same collateral. When closing a loan, borrowers repay the exact same amount of papr that they minted. However, due to interest charges, it is expected that the market value of papr will have risen since they opened their loan.
 
-## Out of scope
+To the extent that borrower incentives push the trading price of papr up over time, corresponding to these interest charges, papr holders are rewarded.
 
-*List any files/contracts that are out of scope for this audit.*
+As an analogy, for those familiar with perpetuals, we can say that papr adapts the funding rate mechanism to set interest rates for loans and balance borrower and lender demand. In particular, papr tokens were heavily inspired by Squeeth, which pioneered perpetuals built on Uniswap V3 oracles and continuous, in-kind funding payments.
 
-# Additional Context
+We *very strongly* encourage everyone to read our [whitepaper](https://backed.mirror.xyz/8SslPvU8of0h-fxoo6AybCpm51f30nd0qxPST8ep08c) to understand more!
 
-*Describe any novel or unique curve logic or mathematical models implemented in the contracts*
+## In Scope
+Everything in `src/` is in scope. The main contracts are `PaprController` and `UniswapOracleFundingRateController` and `NFTEDA`. `PaprController` inherits from `UniswapOracleFundingRateController` and `NFTEDA`.
 
-*Sponsor, please confirm/edit the information below.*
+`UniswapOracleFundingRateController` contract functions are used for updating Target based on changes in the papr:underlying trading price on Uniswap, and otherwise reporting on Target and Mark. 
 
-## Scoping Details 
-```
-- If you have a public code repo, please share it here:  No, private right now
-- How many contracts are in scope?: 12  
-- Total SLoC for these contracts?:  820
-- How many external imports are there?: 11 
-- How many separate interfaces and struct definitions are there for the contracts within scope?:  11
-- Does most of your code generally use composition or inheritance?:   about 50/50
-- How many external calls?:   5
-- What is the overall line coverage percentage provided by your tests?:  80%
-- Is there a need to understand a separate part of the codebase / get context in order to audit this part of the protocol?:   True
-- Please describe required context:   Protocol is built on top of Uniswap v3, and so some uniswap understanding required. This other repo will also be in scope https://github.com/with-backed/NFTEDA
-- Does it use an oracle?:  true; We use Uniswap v3 on chain and also use Reservoir oracle for NFT prices, in the TrustUs model
-- Does the token conform to the ERC20 standard?:  Yes
-- Are there any novel or unique curve logic or mathematical models?: We use a funding rate mechanism similar to squeeth, see formula in whitepaper https://backed.mirror.xyz/8SslPvU8of0h-fxoo6AybCpm51f30nd0qxPST8ep08c
-- Does it use a timelock function?:  No
-- Is it an NFT?: No
-- Does it have an AMM?: We use Uniswap v3  
-- Is it a fork of a popular project?:   false
-- Does it use rollups?:   false
-- Is it multi-chain?:  false
-- Does it use a side-chain?: false
-```
+The `NFTEDA` contract functions are only used for liquidation auctions. `ReservoirOracleUnderwriter` is used for handling oracle messages for NFT values, which are used when minting debt (papr), withdrawing collateral, or liquidating vaults.
 
-# Tests
+In addition to inheriting the above, `PaprController` handles the deposit and withdraw of NFTs, the minting and burning of papr, and liquidation auctions (via `NFTEDA`). It also has some convenience functions that allow using underlying to purchase papr and reduce debt and also immediately swapping newly minted papr for underlying. 
 
-*Provide every step required to build the project from a fresh git clone, as well as steps to run the tests with a gas report.* 
+## Out of Scope
+There are a number of known limitations that are out of scope for the contest 
+- It is possible for a malicious/faulty pool to be passed to UniswapOracleFundingRateController
+- Many things can go wrong in PaprController and NFTEDA if a malicious/faulty NFT is used
+- Many things can go wrong in NFTEDA if a malicious/faulty ERC20 is used for payment asset
+- Many things can go wrong in PaprController if a malicious/faulty ERC20 is used for `underlying`
+- Additionally, there are myriad possibilities for the state of the system: Target values, Mark values, oracle prices, Uniswap liquidity, and more. We are open to hearing about possible adverse scenarios, but be aware that we are aware of many and are OK with the possibility. 
 
-*Note: Many wardens run Slither as a first pass for testing.  Please document any known errors with no workaround.* 
+## Additional Context
+
+
+## Running code 
+`foundryup` + `forge install` + `forge test` will get you up and going. (More info on Foundry [here](https://github.com/foundry-rs/foundry)). Most of the PaprController tests are forking tests: relying on real chain state. To get these working, add an RPC url value (e.g. from Alchemy or Infura) for `MAINNET_RPC_URL` in a `.env` file. 
+
