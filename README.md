@@ -105,7 +105,7 @@ There are a number of known limitations that are out of scope for the contest
 - Additionally, there are myriad possibilities for the state of the system: Target values, Mark values, oracle prices, Uniswap liquidity, and more. We are open to hearing about possible adverse scenarios, but be aware that we are aware of many and are OK with the possibility. 
 
 ## Additional Context
-
+[Here](https://docs.google.com/spreadsheets/d/1rWu_lWWhB6WVNjMe9dwTxmnQ77wtUIGFPFhpju1e49I/edit?usp=sharing) Is a simple Google Sheet you can play with to understand how Target changes in response to Mark and time. 
 
 ## Running code 
 `foundryup` + `forge install` + `forge test` will get you up and going. (More info on Foundry [here](https://github.com/foundry-rs/foundry)). Most of the PaprController tests are forking tests: relying on real chain state. To get these working, add an RPC url value (e.g. from Alchemy or Infura) for `MAINNET_RPC_URL` in a `.env` file. 
