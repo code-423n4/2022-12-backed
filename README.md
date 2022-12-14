@@ -82,13 +82,19 @@ As an analogy, for those familiar with perpetuals, we can say that papr adapts t
 We *very strongly* encourage everyone to read our [whitepaper](https://backed.mirror.xyz/8SslPvU8of0h-fxoo6AybCpm51f30nd0qxPST8ep08c) to understand more!
 
 ## In Scope
-Everything in `src/` is in scope. The main contracts are `PaprController` and `UniswapOracleFundingRateController` and `NFTEDA`. `PaprController` inherits from `UniswapOracleFundingRateController` and `NFTEDA`.
-
-`UniswapOracleFundingRateController` contract functions are used for updating Target based on changes in the papr:underlying trading price on Uniswap, and otherwise reporting on Target and Mark. 
-
-The `NFTEDA` contract functions are only used for liquidation auctions. `ReservoirOracleUnderwriter` is used for handling oracle messages for NFT values, which are used when minting debt (papr), withdrawing collateral, or liquidating vaults.
-
-In addition to inheriting the above, `PaprController` handles the deposit and withdraw of NFTs, the minting and burning of papr, and liquidation auctions (via `NFTEDA`). It also has some convenience functions that allow using underlying to purchase papr and reduce debt and also immediately swapping newly minted papr for underlying. 
+Everything in `src/` is in scope. Below is an overview of the non-interface contracts. 
+| Contract Name      | SLOC        | Descripton |
+| -----------        | ----------- | ----------- |
+| [PaprController](https://github.com/with-backed/papr/blob/master/src/PaprController.sol)     | 402       | Inherits `NFTEDAStarterIncentive`, `UniswapOracleFundingRateController`, and `ReservoirOracleUnderwriter`. Facilitates deposit and withdrawal of NFTs, minting and burning of papr, and liquidation auctions      |
+| [UniswapOracleFundingRateController](https://github.com/with-backed/papr/blob/master/src/UniswapOracleFundingRateController.sol)     | 110       | Source of `Target` and `Mark` values. Updates `Target` based on how the papr:underlying pool is trading on Uniswap.|
+| [ReservoirOracleUnderwriter](https://github.com/with-backed/papr/blob/master/src/ReservoirOracleUnderwriter.sol)     | 79       | Validates and unpacks oracles messages from [Reservoir](https://github.com/reservoirprotocol/oracle)|
+| [PaprToken](https://github.com/with-backed/papr/blob/master/src/PaprToken.sol)     | 23       | Simple ERC20 token that can be minted and burned by its deployer. |
+| [NFTEDA](https://github.com/with-backed/papr/blob/master/src/NFTEDA/NFTEDA.sol)     | 73       | (NFT Exponential Decay Auction) Facilitates exponential price decay Dutch auctions for NFTs|
+| [NFTEDAStarterIncentive](https://github.com/with-backed/papr/blob/master/src/NFTEDA/extensions/NFTEDAStarterIncentive.sol)     | 44       | Instance of NFTEDA that offers an auction discount to the starter of the auction. |
+| [EDAPrice](https://github.com/with-backed/papr/blob/master/src/NFTEDA/libraries/EDAPrice.sol)     | 18       | A library for computing the current price of an exponential price decay auction.|
+| [UniswapHelpers](https://github.com/with-backed/papr/blob/master/src/libraries/UniswapHelpers.sol)     | 65       | Library with various helpers for interacting with Uniswap v3.|
+| [OracleLibrary](https://github.com/with-backed/papr/blob/master/src/libraries/OracleLibrary.sol)     | 47       | Library with various oracle methods, all adapted from [Uniswap/v3-periphery/OracleLibrary](https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/OracleLibrary.sol)|
+| [PoolAddress](https://github.com/with-backed/papr/blob/master/src/libraries/PoolAddress.sol)     | 30       | Library taken [from Uniswap/v3-periphery](https://github.com/Uniswap/v3-periphery/blob/main/contracts/libraries/PoolAddress.sol) with a single line change for solc >= 0.8.0 compatibility|
 
 ## Out of Scope
 There are a number of known limitations that are out of scope for the contest 
