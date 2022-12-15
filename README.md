@@ -180,7 +180,7 @@ We *very strongly* encourage everyone to read our [whitepaper](https://backed.mi
 ## Additional Context
 [Here](https://docs.google.com/spreadsheets/d/1rWu_lWWhB6WVNjMe9dwTxmnQ77wtUIGFPFhpju1e49I/edit?usp=sharing) Is a simple Google Sheet you can play with to understand how Target changes in response to Mark and time. 
 
-Slither is broken due to this sourceMap issue: crytic/crytic-compile#281. Please use the latest version of Slither to avoid issues. 
+If you're using Slither, ensure you're using the latest version to avoid this sourceMap issue: crytic/crytic-compile#281. 
 
 ## Running code 
 `foundryup` + `forge install` + `forge test` will get you up and going. (More info on Foundry [here](https://github.com/foundry-rs/foundry)). Most of the PaprController tests are forking tests: relying on real chain state. To get these working, add an RPC url value (e.g. from Alchemy or Infura) for `MAINNET_RPC_URL` in a `.env` file or otherwise run `export MAINNET_RPC_URL=<your-mainnet-rpc-url-goes-here>`
