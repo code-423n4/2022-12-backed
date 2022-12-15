@@ -38,76 +38,76 @@ As an analogy, for those familiar with perpetuals, we can say that papr adapts t
 We *very strongly* encourage everyone to read our [whitepaper](https://backed.mirror.xyz/8SslPvU8of0h-fxoo6AybCpm51f30nd0qxPST8ep08c) to understand more!
 
 ## Commit 
-Contest code is hosted on Backed's Github, this is the relevant commit https://github.com/with-backed/papr/tree/7b28c4362c88f35728f139107d3e7b0a3345fed7
+Contest code is hosted on Backed's Github, this is the relevant commit https://github.com/with-backed/papr/tree/9528f2711ff0c1522076b9f93fba13f88d5bd5e6
 
 ### Files in scope
 |File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|Description and [Coverage](#nowhere "(Lines hit / Total)")|Libraries|
 |:-|:-:|:-|:-|
 |_Contracts (5)_|
-|[src/PaprToken.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprToken.sol)|[23](#nowhere "(nSLOC:23, SLOC:23, Lines:31)")|Simple ERC20 token that can be minted and burned by its deployer., &nbsp;&nbsp;[100.00%](#nowhere "(Hit:2 / Total:2)")| `solmate/*`|
-|[src/NFTEDA/extensions/NFTEDAStarterIncentive.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/extensions/NFTEDAStarterIncentive.sol)|[44](#nowhere "(nSLOC:38, SLOC:44, Lines:78)")|Instance of NFTEDA that offers an auction discount to the starter of the auction., &nbsp;&nbsp;[70.00%](#nowhere "(Hit:7 / Total:10)")| `solmate/*`|
-|[src/ReservoirOracleUnderwriter.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/ReservoirOracleUnderwriter.sol) [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover")|[79](#nowhere "(nSLOC:76, SLOC:79, Lines:118)")|Validates and unpacks oracles messages from Reservoir., &nbsp;&nbsp;[75.00%](#nowhere "(Hit:9 / Total:12)")| `solmate/*` `@reservoir/*`|
-|[src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/UniswapOracleFundingRateController.sol)|[110](#nowhere "(nSLOC:110, SLOC:110, Lines:174)")|Source of Target and Mark values. Updates Target based on how the papr:underlying pool is trading on Uniswap., &nbsp;&nbsp;[100.00%](#nowhere "(Hit:49 / Total:49)")| `solmate/*`|
-|[src/PaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprController.sol) [📤](#nowhere "Initiates ETH Value Transfer") [🌀](#nowhere "create/create2") [Σ](#nowhere "Unchecked Blocks")|[402](#nowhere "(nSLOC:339, SLOC:402, Lines:560)")|Inherits NFTEDAStarterIncentive, UniswapOracleFundingRateController, and ReservoirOracleUnderwriter. Facilitates deposit and withdrawal of NFTs, minting and burning of papr, and liquidation auctions., &nbsp;&nbsp;[95.33%](#nowhere "(Hit:143 / Total:150)")| `solmate/*` `openzeppelin-contracts/*` `solady/*`|
+|[src/PaprToken.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprToken.sol)|[23](#nowhere "(nSLOC:23, SLOC:23, Lines:31)")|Simple ERC20 token that can be minted and burned by its deployer., &nbsp;&nbsp;[100.00%](#nowhere "(Hit:2 / Total:2)")| `solmate/*`|
+|[src/NFTEDA/extensions/NFTEDAStarterIncentive.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/extensions/NFTEDAStarterIncentive.sol)|[44](#nowhere "(nSLOC:38, SLOC:44, Lines:78)")|Instance of NFTEDA that offers an auction discount to the starter of the auction., &nbsp;&nbsp;[70.00%](#nowhere "(Hit:7 / Total:10)")| `solmate/*`|
+|[src/ReservoirOracleUnderwriter.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol) [🧮](#nowhere "Uses Hash-Functions") [🔖](#nowhere "Handles Signatures: ecrecover")|[79](#nowhere "(nSLOC:76, SLOC:79, Lines:118)")|Validates and unpacks oracles messages from Reservoir., &nbsp;&nbsp;[75.00%](#nowhere "(Hit:9 / Total:12)")| `solmate/*` `@reservoir/*`|
+|[src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol)|[110](#nowhere "(nSLOC:110, SLOC:110, Lines:174)")|Source of Target and Mark values. Updates Target based on how the papr:underlying pool is trading on Uniswap., &nbsp;&nbsp;[100.00%](#nowhere "(Hit:49 / Total:49)")| `solmate/*`|
+|[src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol) [📤](#nowhere "Initiates ETH Value Transfer") [🌀](#nowhere "create/create2") [Σ](#nowhere "Unchecked Blocks")|[402](#nowhere "(nSLOC:339, SLOC:402, Lines:560)")|Inherits NFTEDAStarterIncentive, UniswapOracleFundingRateController, and ReservoirOracleUnderwriter. Facilitates deposit and withdrawal of NFTs, minting and burning of papr, and liquidation auctions., &nbsp;&nbsp;[95.33%](#nowhere "(Hit:143 / Total:150)")| `solmate/*` `openzeppelin-contracts/*` `solady/*`|
 |_Abstracts (1)_|
-|[src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/NFTEDA.sol) [🧮](#nowhere "Uses Hash-Functions")|[73](#nowhere "(nSLOC:64, SLOC:73, Lines:124)")|(NFT Exponential Decay Auction) Facilitates exponential price decay Dutch auctions for NFTs., &nbsp;&nbsp;[95.65%](#nowhere "(Hit:22 / Total:23)")| `solmate/*`|
+|[src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/NFTEDA.sol) [🧮](#nowhere "Uses Hash-Functions")|[73](#nowhere "(nSLOC:64, SLOC:73, Lines:124)")|(NFT Exponential Decay Auction) Facilitates exponential price decay Dutch auctions for NFTs., &nbsp;&nbsp;[95.65%](#nowhere "(Hit:22 / Total:23)")| `solmate/*`|
 |_Libraries (4)_|
-|[src/NFTEDA/libraries/EDAPrice.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/libraries/EDAPrice.sol)|[18](#nowhere "(nSLOC:13, SLOC:18, Lines:23)")|A library for computing the current price of an exponential price decay auction., &nbsp;&nbsp;[0.00%](#nowhere "(Hit:0 / Total:5)")| `solmate/*` `v3-core/*`|
-|[src/libraries/PoolAddress.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/PoolAddress.sol) [🧮](#nowhere "Uses Hash-Functions")|[30](#nowhere "(nSLOC:30, SLOC:30, Lines:48)")|Library taken from Uniswap/v3-periphery with a single line change for solc >= 0.8.0 compatibility., &nbsp;&nbsp;[0.00%](#nowhere "(Hit:0 / Total:4)")||
-|[src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/OracleLibrary.sol) [Σ](#nowhere "Unchecked Blocks")|[47](#nowhere "(nSLOC:39, SLOC:47, Lines:62)")|Library with various oracle methods, all adapted from Uniswap/v3-periphery/OracleLibrary., &nbsp;&nbsp;[0.00%](#nowhere "(Hit:0 / Total:15)")| `v3-core/*` `fullrange/*`|
-|[src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/UniswapHelpers.sol)|[65](#nowhere "(nSLOC:54, SLOC:65, Lines:113)")|Library with various helpers for interacting with Uniswap v3., &nbsp;&nbsp;[44.44%](#nowhere "(Hit:8 / Total:18)")| `v3-core/*` `fullrange/*`|
+|[src/NFTEDA/libraries/EDAPrice.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/libraries/EDAPrice.sol)|[18](#nowhere "(nSLOC:13, SLOC:18, Lines:23)")|A library for computing the current price of an exponential price decay auction., &nbsp;&nbsp;[0.00%](#nowhere "(Hit:0 / Total:5)")| `solmate/*` `v3-core/*`|
+|[src/libraries/PoolAddress.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/PoolAddress.sol) [🧮](#nowhere "Uses Hash-Functions")|[30](#nowhere "(nSLOC:30, SLOC:30, Lines:48)")|Library taken from Uniswap/v3-periphery with a single line change for solc >= 0.8.0 compatibility., &nbsp;&nbsp;[0.00%](#nowhere "(Hit:0 / Total:4)")||
+|[src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/OracleLibrary.sol) [Σ](#nowhere "Unchecked Blocks")|[47](#nowhere "(nSLOC:39, SLOC:47, Lines:62)")|Library with various oracle methods, all adapted from Uniswap/v3-periphery/OracleLibrary., &nbsp;&nbsp;[0.00%](#nowhere "(Hit:0 / Total:15)")| `v3-core/*` `fullrange/*`|
+|[src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/UniswapHelpers.sol)|[65](#nowhere "(nSLOC:54, SLOC:65, Lines:113)")|Library with various helpers for interacting with Uniswap v3., &nbsp;&nbsp;[44.44%](#nowhere "(Hit:8 / Total:18)")| `v3-core/*` `fullrange/*`|
 |_Interfaces (4)_|
-|[src/interfaces/IUniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/interfaces/IUniswapOracleFundingRateController.sol)|[8](#nowhere "(nSLOC:8, SLOC:8, Lines:19)")|-||
-|[src/interfaces/IFundingRateController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/interfaces/IFundingRateController.sol)|[17](#nowhere "(nSLOC:17, SLOC:17, Lines:58)")|-| `solmate/*`|
-|[src/NFTEDA/interfaces/INFTEDA.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/interfaces/INFTEDA.sol)|[28](#nowhere "(nSLOC:28, SLOC:28, Lines:66)")|-| `solmate/*`|
-|[src/interfaces/IPaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/interfaces/IPaprController.sol)|[99](#nowhere "(nSLOC:74, SLOC:99, Lines:273)")|-| `solmate/*`|
+|[src/interfaces/IUniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/interfaces/IUniswapOracleFundingRateController.sol)|[8](#nowhere "(nSLOC:8, SLOC:8, Lines:19)")|-||
+|[src/interfaces/IFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/interfaces/IFundingRateController.sol)|[17](#nowhere "(nSLOC:17, SLOC:17, Lines:58)")|-| `solmate/*`|
+|[src/NFTEDA/interfaces/INFTEDA.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/interfaces/INFTEDA.sol)|[28](#nowhere "(nSLOC:28, SLOC:28, Lines:66)")|-| `solmate/*`|
+|[src/interfaces/IPaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/interfaces/IPaprController.sol)|[99](#nowhere "(nSLOC:74, SLOC:99, Lines:273)")|-| `solmate/*`|
 |Total (over 14 files):| [1043](#nowhere "(nSLOC:913, SLOC:1043, Lines:1747)") |[83.33%](#nowhere "Hit:240 / Total:288")|
 
 ## External imports
 * **@reservoir/ReservoirOracle.sol**
-  * [src/ReservoirOracleUnderwriter.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/ReservoirOracleUnderwriter.sol)
+  * [src/ReservoirOracleUnderwriter.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol)
 * **fullrange/libraries/FullMath.sol**
-  * [src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/OracleLibrary.sol)
-  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/UniswapHelpers.sol)
+  * [src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/OracleLibrary.sol)
+  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/UniswapHelpers.sol)
 * **fullrange/libraries/TickMath.sol**
-  * [src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/OracleLibrary.sol)
-  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/UniswapHelpers.sol)
+  * [src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/OracleLibrary.sol)
+  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/UniswapHelpers.sol)
 * **openzeppelin-contracts/access/Ownable2Step.sol**
-  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprController.sol)
+  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
 * **solady/utils/Multicallable.sol**
-  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprController.sol)
+  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
 * **solmate/tokens/ERC20.sol**
-  * [src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/NFTEDA.sol)
-  * [src/NFTEDA/interfaces/INFTEDA.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/interfaces/INFTEDA.sol)
-  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprController.sol)
-  * [src/PaprToken.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprToken.sol)
-  * [src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/UniswapOracleFundingRateController.sol)
-  * [src/interfaces/IFundingRateController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/interfaces/IFundingRateController.sol)
-  * [src/interfaces/IPaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/interfaces/IPaprController.sol)
+  * [src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/NFTEDA.sol)
+  * [src/NFTEDA/interfaces/INFTEDA.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/interfaces/INFTEDA.sol)
+  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
+  * [src/PaprToken.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprToken.sol)
+  * [src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol)
+  * [src/interfaces/IFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/interfaces/IFundingRateController.sol)
+  * [src/interfaces/IPaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/interfaces/IPaprController.sol)
 * **solmate/tokens/ERC721.sol**
-  * [src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/NFTEDA.sol)
-  * [src/NFTEDA/interfaces/INFTEDA.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/interfaces/INFTEDA.sol)
-  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprController.sol)
-  * [src/ReservoirOracleUnderwriter.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/ReservoirOracleUnderwriter.sol)
-  * [src/interfaces/IPaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/interfaces/IPaprController.sol)
+  * [src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/NFTEDA.sol)
+  * [src/NFTEDA/interfaces/INFTEDA.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/interfaces/INFTEDA.sol)
+  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
+  * [src/ReservoirOracleUnderwriter.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/ReservoirOracleUnderwriter.sol)
+  * [src/interfaces/IPaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/interfaces/IPaprController.sol)
 * **solmate/utils/FixedPointMathLib.sol**
-  * [src/NFTEDA/extensions/NFTEDAStarterIncentive.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/extensions/NFTEDAStarterIncentive.sol)
-  * [src/NFTEDA/libraries/EDAPrice.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/libraries/EDAPrice.sol)
-  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprController.sol)
-  * [src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/UniswapOracleFundingRateController.sol)
+  * [src/NFTEDA/extensions/NFTEDAStarterIncentive.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/extensions/NFTEDAStarterIncentive.sol)
+  * [src/NFTEDA/libraries/EDAPrice.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/libraries/EDAPrice.sol)
+  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
+  * [src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol)
 * **solmate/utils/SafeCastLib.sol**
-  * [src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/UniswapOracleFundingRateController.sol)
+  * [src/UniswapOracleFundingRateController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/UniswapOracleFundingRateController.sol)
 * **solmate/utils/SafeTransferLib.sol**
-  * [src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/NFTEDA.sol)
-  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/PaprController.sol)
+  * [src/NFTEDA/NFTEDA.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/NFTEDA.sol)
+  * [src/PaprController.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol)
 * **v3-core/contracts/interfaces/IUniswapV3Factory.sol**
-  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/UniswapHelpers.sol)
+  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/UniswapHelpers.sol)
 * **v3-core/contracts/interfaces/IUniswapV3Pool.sol**
-  * [src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/OracleLibrary.sol)
-  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/UniswapHelpers.sol)
+  * [src/libraries/OracleLibrary.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/OracleLibrary.sol)
+  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/UniswapHelpers.sol)
 * **v3-core/contracts/libraries/SafeCast.sol**
-  * [src/NFTEDA/libraries/EDAPrice.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/NFTEDA/libraries/EDAPrice.sol)
-  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/7b28c4362c88f35728f139107d3e7b0a3345fed7/src/libraries/UniswapHelpers.sol)
+  * [src/NFTEDA/libraries/EDAPrice.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/NFTEDA/libraries/EDAPrice.sol)
+  * [src/libraries/UniswapHelpers.sol](https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/libraries/UniswapHelpers.sol)
   
 ## Scoping details answers
 ```
