@@ -84,6 +84,9 @@ As an analogy, for those familiar with perpetuals, we can say that papr adapts t
 
 We *very strongly* encourage everyone to read our [whitepaper](https://backed.mirror.xyz/8SslPvU8of0h-fxoo6AybCpm51f30nd0qxPST8ep08c) to understand more!
 
+## Commit 
+Contest code is hosted on Backed's Github, this is the relevant commit https://github.com/with-backed/papr/tree/7b28c4362c88f35728f139107d3e7b0a3345fed7
+
 ### Files in scope
 |File|[SLOC](#nowhere "(nSLOC, SLOC, Lines)")|Description and [Coverage](#nowhere "(Lines hit / Total)")|Libraries|
 |:-|:-:|:-|:-|
