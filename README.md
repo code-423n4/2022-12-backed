@@ -30,8 +30,8 @@ Some of the checklists in this doc are for **C4 (🐺)** and some of them are fo
 Under "SPONSORS ADD INFO HERE" heading below, include the following:
 
 - [ ] Modify the bottom of this `README.md` file to describe how your code is supposed to work with links to any relevent documentation and any other criteria/details that the C4 Wardens should keep in mind when reviewing. ([Here's a well-constructed example.](https://github.com/code-423n4/2022-08-foundation#readme))
-  - [x ] When linking, please provide all links as full absolute links versus relative links
-  - [x ] All information should be provided in markdown format (HTML does not render on Code4rena.com)
+  - [ ] When linking, please provide all links as full absolute links versus relative links
+  - [ ] All information should be provided in markdown format (HTML does not render on Code4rena.com)
 - [ ] Under the "Scope" heading, provide the name of each contract and:
   - [ ] source lines of code (excluding blank lines and comments) in each
   - [ ] external contracts called in each
