@@ -13,7 +13,7 @@
 
 ## C4udit / Publicly Known Issues
 
-The C4audit output for the contest can be found [here](add link to report) within an hour of contest opening.
+The C4audit output for the contest can be found [here](https://gist.github.com/itsmetechjay/c5eb7f988735188a7bc9005f7b54a9cf) within an hour of contest opening.
 
 There are a number of known limitations that are out of scope for the contest 
 - It is possible for a malicious/faulty pool to be passed to UniswapOracleFundingRateController
