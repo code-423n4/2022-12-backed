@@ -1,0 +1,677 @@
+==============================================================
+Guild: Code4rena
+Channel: ARCHIVE-Q4-2022 / backed-papr-dec16
+==============================================================
+
+[12/16/2022 14:36] paroxysm9999 (pinned)
+👋 Hello and welcome to the contest channel for the $60,500 USDC **Papr** contest!
+
+📆 Contest opens 12/16/2022 20:00 (20:00 UTC) and runs through 12/21/2022 20:00 (20:00 UTC) (5 days).
+
+Please give a warm welcome to the Papr team, particularly @wilsoncusack @adamg, who will be available for questions either here in the channel or via DM.
+
+We'll be posting relevant links, documentation, etc. here, so if you intend to participate in this contest, consider enabling notifications for this channel. 🐺 ⏰
+
+Contest Page: https://code4rena.com/contests/2022-12-papr-contest
+
+{Embed}
+https://code4rena.com/contests/2022-12-papr-contest
+Code4rena Papr contest
+$60,500 USDC
+16 December 2022—21 December 2022
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/C4-banner-7C19B.png
+
+
+[12/16/2022 14:36] paroxysm9999
+Pinned a message.
+
+
+[12/16/2022 14:37] wilsoncusack
+👋 excited!
+
+{Reactions}
+💯 (9) 
+
+[12/16/2022 20:28] dicethedev
+Let's give it a shot
+
+{Reactions}
+🔥 (4) 
+
+[12/16/2022 20:54] minh___ (pinned)
+@Jay | C4  here it is, apologies for the slight delay
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/report-5A313.md
+
+{Reactions}
+thankyou 
+
+[12/16/2022 21:02] itsmetechjay (pinned)
+Wardens, please note that the automated findings output has been posted above and added to pinned posts. These are considered publicly known issues and are not eligible for awards.
+
+**Automated findings: **
+https://gist.github.com/itsmetechjay/c5eb7f988735188a7bc9005f7b54a9cf
+
+This will also be linked in the contest README file shortly.
+
+{Reactions}
+thankyou 
+
+[12/16/2022 21:02] itsmetechjay
+Pinned a message.
+
+
+[12/16/2022 21:02] itsmetechjay
+Pinned a message.
+
+
+[12/16/2022 21:18] ladboy233
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/image-136E2.png
+
+
+[12/16/2022 21:18] ladboy233
+Hello
+
+
+[12/16/2022 21:20] ladboy233
+@adamg @wilsoncusack I really think if the project could be more specific about which issues are explicitly out of scope, then auditor can focus on the cruical part of the in-scope contract. Thanks.
+
+
+[12/16/2022 21:20] ladboy233
+:chefskiss:
+
+
+[12/16/2022 21:22] ladboy233
+For example, this is my understanding: lack of Uniswap liqudity, oracle related external factor is out of scope.
+
+
+[12/16/2022 21:22] ladboy233
+Not sure about the "target values, mark values"😂
+
+
+[12/16/2022 21:23] ladboy233
+"but be aware that we are aware of many and are OK with the possibility." this makes the scope vague 🥲
+
+{Reactions}
+☝🏻 (4) 
+
+[12/16/2022 21:28] wilsoncusack
+If in doubt feel free to submit. We can remove that note if others are confused. It might make more sense after reading the whitepaper. In our previous audit we got many reports including trade offs that we felt were explicit in the protocol design. Eg we are trying to avoid getting many submissions with things like “if Uniswap liquidity is low and the funding period is very short, an attacker could sell a bunch of papr and cause liquidations”
+
+
+[12/16/2022 21:29] wilsoncusack
+I will try to think about how to phrase it more clearly or otherwise remove
+
+
+[12/16/2022 22:01] wilsoncusack (pinned)
+Made a video orienting a bit to the codebase. Lmk if this is helpful and if there’s anything else you’d want me to cover. Could also do a livestream so people could ask questions https://twitter.com/wilsoncusack/status/1603872305465155585?s=46&t=XSAHvZsy2Htp33dfzvFP7Q
+
+{Embed}
+wilson (@WilsonCusack)
+https://twitter.com/wilsoncusack/status/1603872305465155585?s=46&t=XSAHvZsy2Htp33dfzvFP7Q
+Lil orientation to the code
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/edvsqPA9j__w2EMv-6346F.jpg
+Twitter
+
+{Reactions}
+hi5 (12) 
+
+[12/16/2022 22:13] trustminimised
+I think what might help is, rather than rephrasing what you're not interested in, being more explicit about what you all are most concerned about? That would help me a lot.
+
+
+[12/16/2022 22:17] wilsoncusack
+Sure. Generally any violations of the assumptions of the protocol: only nft owners can mint debt, debt cannot exceed max LTV, only owner can withdraw their nft (except for liquidations), liquidations only occur if max LTV is violated, target and mark are updated correctly, reducing debt works, cannot withdraw nft if would cause vault to violate max debt.
+
+{Reactions}
+👍 (3) 
+
+[12/16/2022 22:18] trustminimised
+Excellent, that helps a lot.
+
+{Reactions}
+👍 
+
+[12/16/2022 22:19] wilsoncusack
+I can add to the README. Generally we are open to any and all vulnerabilities in the in scope contracts. The note discussed above was intended to steer people away from lengthy hypotheticals that do not result in something that is clearly against the protocol design but is possibly just undesirable
+
+
+[12/17/2022 06:42] dinesh11g
+EXTERNAL IMPORTS were also in In-scope?
+
+
+[12/17/2022 09:38] ne0n239
+I watched the video. Got the answer😆
+
+
+[12/17/2022 10:30] ch_301
+@wilsoncusack  Send you a friend request
+
+{Reactions}
+👍 
+
+[12/17/2022 10:38] ne0n239
+@wilsoncusack Sent u a friend request
+
+{Reactions}
+👍 
+
+[12/17/2022 11:39] wilsoncusack
+Which?
+
+
+[12/17/2022 12:44] stealthyzzzz
+fr sent!
+
+{Reactions}
+👍 
+
+[12/18/2022 05:09] chaduke#3730
+where is function _purchaseNFT()?
+
+
+[12/18/2022 05:24] ne0n239
+src/NFTEDA/NFTEDA.sol
+
+{Reactions}
+👍 
+
+[12/18/2022 05:40] chaduke#3730
+thanks
+
+
+[12/18/2022 10:16] 2997ms
+@wilsoncusack Sent you a friend request
+
+
+[12/18/2022 12:08] Saintcode_#8823
+what is token0IsUnderlying on Papercontroller for?
+
+
+[12/18/2022 19:01] wilsoncusack
+sorry, added!
+
+
+[12/18/2022 19:02] wilsoncusack
+zeroForOne in swaps as well as some logic in the Uniswap callback
+
+
+[12/18/2022 20:04] Erim#9410
+how we send report
+
+
+[12/18/2022 21:55] wilsoncusack
+https://code4rena.com/contests/2022-12-papr-contest/submit
+
+{Embed}
+https://code4rena.com/contests/2022-12-papr-contest/submit
+Submit finding | Code 423n4
+The future of audits is decentralized.
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/C4-banner-7C19B.png
+
+
+[12/18/2022 23:25] chaduke#3730
+It appears that the user can specify the swap fee rate and the recipient of the swap fee, why this design?
+
+{Reactions}
+🤔 
+
+[12/19/2022 00:38] wilsoncusack
+this is a fee specified by the client that is intended to incentivize the building of clients, Uniswap has something similar https://github.com/Uniswap/v3-periphery/blob/main/contracts/base/PeripheryPaymentsWithFee.sol
+
+{Embed}
+https://github.com/Uniswap/v3-periphery/blob/main/contracts/base/PeripheryPaymentsWithFee.sol
+v3-periphery/PeripheryPaymentsWithFee.sol at main · Uniswap/v3-peri...
+🦄 🦄 🦄 Peripheral smart contracts for interacting with Uniswap v3 - v3-periphery/PeripheryPaymentsWithFee.sol at main · Uniswap/v3-periphery
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/v3-periphery-3784F
+
+
+[12/19/2022 00:38] wilsoncusack
+we can make the NatSpec more clear on this
+
+
+[12/19/2022 00:52] chaduke#3730
+thanks
+
+
+[12/19/2022 00:52] chaduke#3730
+@wilsoncusack
+
+{Reactions}
+👍 
+
+[12/19/2022 01:06] chaduke#3730
+why do we need to make this comparison? https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol#L525
+
+{Embed}
+https://github.com/with-backed/papr/blob/9528f2711ff0c1522076b9f93fba13f88d5bd5e6/src/PaprController.sol
+papr/PaprController.sol at 9528f2711ff0c1522076b9f93fba13f88d5bd5e6...
+Contribute to with-backed/papr development by creating an account on GitHub.
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/papr-35355
+
+
+[12/19/2022 01:06] chaduke#3730
+I feel it is always true
+
+
+[12/19/2022 01:07] wilsoncusack
+generally we require `liquidationAuctionMinSpacing` between auctions. If the auction being purchased is the most recent, then we clear `latestAuctionStartTime` to allow a new auction to start
+
+
+[12/19/2022 01:08] chaduke#3730
+got it thanks
+
+
+[12/19/2022 02:28] ladboy233
+@wilsoncusack Can I please add friend and DM you?
+
+{Reactions}
+👍 
+
+[12/19/2022 02:28] ladboy233
+Thanks.
+
+
+[12/19/2022 07:20] holladiewaldfee0706
+@wilsoncusack Sent you a friend request
+
+
+[12/19/2022 08:49] KingNFT#8007
+Any one knows who is the judge of this contest
+
+
+[12/19/2022 11:25] rvierdiiev
+@wilsoncusack pls, accept friend request
+
+{Reactions}
+👍 
+
+[12/19/2022 14:47] wilsoncusack
+accepted
+
+
+[12/19/2022 14:48] wilsoncusack
+cc @kartoonjoy | C4 🎇🎇
+
+
+[12/19/2022 16:00] ladboy233
+This video worth a pin. haha
+
+{Reactions}
+👍 
+
+[12/19/2022 16:00] ladboy233
+
+
+{Attachments}
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/image-E4933.png
+
+
+[12/19/2022 16:02] wilsoncusack
+roger, might need @kartoonjoy | C4 🎇🎇 to do so. I can also add to the readme
+
+{Reactions}
+✅ 
+
+[12/19/2022 16:02] wilsoncusack
+anything else you'd want covered in a video
+
+
+[12/19/2022 16:02] wilsoncusack
+?
+
+
+[12/19/2022 16:03] kartoonjoy
+Pinned a message.
+
+
+[12/19/2022 16:06] kartoonjoy
+We don't disclose that prior to contests, a) because judge assignments can and do change, and b) to de-risk against potential for bias.
+
+{Reactions}
+👍 (2) 
+
+[12/20/2022 09:39] Franfran#5067
+is the previous audit public ? Was the codebase much changed after it ?
+
+
+[12/20/2022 10:30] eyexploit
+@wilsoncusack  dmed you
+
+
+[12/20/2022 16:52] trustminimised
+@wilsoncusack Sent friend request.
+
+{Reactions}
+👍 
+
+[12/20/2022 17:26] un_for_given
+@wilsoncusack Sent friend request.
+
+{Reactions}
+👍 
+
+[12/20/2022 19:38] Franfran#5067
+same 4 me @wilsoncusack
+
+{Reactions}
+👍 
+
+[12/20/2022 23:15] yixxas
+Sent too @wilsoncusack
+
+{Reactions}
+👍 
+
+[12/20/2022 23:25] koolexc
+@wilsoncusack DMed too
+
+{Reactions}
+👍 
+
+[12/21/2022 02:21] acegawd
+added you @wilsoncusack
+
+
+[12/21/2022 03:45] evan#9648
+@wilsoncusack Sent friend request.
+
+
+[12/21/2022 14:27] teawaterwire
+@wilsoncusack  sent you a request
+
+
+[12/21/2022 16:57] 0xbtk
+@wilsoncusack sent you a request
+
+
+[12/21/2022 16:57] .tointer
+Damn, this one was above my level. I was not been able to find even low risk things
+
+{Reactions}
+same (2) 
+
+[12/21/2022 17:09] teawaterwire
+if something is not implemented as mentioned in the whitepaper, should it be raised as an issue?
+
+
+[12/21/2022 17:38] stealthyzzzz
+I thought I was the only one lmao good stuff
+
+
+[12/21/2022 18:17] wilsoncusack
+this is not really considered an issue, but more just bad documentation on our part. Feel free to DM though.
+
+
+[12/21/2022 18:20] wilsoncusack
+Sorry for being slow on friend requests all! Think I got them all now
+
+
+[12/21/2022 20:02] C4
+**🚨 CONTEST ALERT**
+
+@🐺wardens  The **Backed-Papr** contest is now closed! Huge thanks to everyone who participated 🔍, whether you submitted a finding or not.
+
+What's next: The sponsor team and judge will review the findings over the next couple of weeks. Keep an eye on 📢announcements for regular updates on how the contest is progressing through awarding 🤑🏆, judging 🧑‍⚖️ and reporting 📜. Feel free to ping a gardener if you have questions along the way!
+
+{Reactions}
+hi5 (8) 
+
+[12/21/2022 20:06] wilsoncusack
+Thanks so much to everyone who participated! Really enjoyed getting to chat with all of you
+
+{Reactions}
+🙏 (12) 
+
+[12/21/2022 20:07] trustminimised
+Thank you for being so responsive. Liked the codebase as well.
+
+{Reactions}
+❤️ (5) 
+
+[12/21/2022 20:09] Franfran#5067
+Indeed a very good codebase. Good luck for production!
+
+{Reactions}
+🙏 (4) 
+
+[12/22/2022 06:17] chaduke#3730
+I worked har d on this one, hoping a good result
+
+{Reactions}
+🤞🏻 (9) hi5 (9) 
+
+[12/22/2022 06:17] chaduke#3730
+good luck to all!
+
+
+[01/13/2023 20:02] ea3384
+good luck to all wardens..:-)
+
+
+[01/19/2023 15:18] ladboy233
+👀
+
+
+[01/20/2023 19:21] itsmetechjay
+:C4Keycap:  💸 🎉 Awards for **Papr by Backed**:
+
+$11,616.70 USDC » @Jeiwan 
+$4,158.71 USDC » @Bobface 
+$3,832.46 USDC » @hansfriese 
+$3,222.01 USDC » @HollaDieWaldfee 
+$2,846.97 USDC » @alpharush 
+$2,687.43 USDC » @hihen 
+$2,603.34 USDC » @unforgiven 
+$2,569.94 USDC » @HE1M 
+$2,365.25 USDC » @rvierdiiev 
+$2,093.85 USDC » @bin2chen 
+$1,330.41 USDC » @Rotcivegaf 
+$1,330.41 USDC » @Ruhum 
+$1,330.41 USDC » @Koolex 
+$866.64 USDC » @IllIllI 
+$748.30 USDC » @Rolezn 
+$748.30 USDC » @RaymondFam 
+$476.07 USDC » @0x52 
+$460.00 USDC » @yixxas 
+$438.00 USDC » @code-cipher 
+$417.12 USDC » @ladboy233小伙子 
+$394.79 USDC » @0xSmartContract 
+$394.45 USDC » @c3phas 
+$387.25 USDC » @Franfran 
+$353.85 USDC » @brgltd 
+$353.85 USDC » @Breeje 
+$287.37 USDC » @__141345__ 
+$287.37 USDC » @8olidity 
+$133.18 USDC » @evan 
+$84.48 USDC » @0xhacksmithh 
+$57.64 USDC » @noot 
+$43.54 USDC » oyc_109
+$43.54 USDC » @Bnke 
+$43.54 USDC » Secureverse (@imkapadia, @Nsecv, @leosathya)
+$43.54 USDC » @chrisdior4 
+$43.54 USDC » @0xAgro 
+$43.54 USDC » SmartSek (@hake | SmartSek, @Django | Saloon Finance)
+$43.54 USDC » @shark 
+$43.54 USDC » @imare 
+$43.54 USDC » @Diana 
+$43.54 USDC » @tnevler 
+$43.54 USDC » @lukris02 
+$43.54 USDC » @SaharDevep 
+$43.54 USDC » @wait 
+$43.54 USDC » @ak1
+$43.54 USDC » @gz627 
+$40.94 USDC » @eyexploit 
+$40.94 USDC » @saneryee 
+$40.94 USDC » @rbitbytes 
+$40.94 USDC » @Awesome 
+$40.94 USDC » @Mukund 
+$40.94 USDC » @TomJ 
+$40.94 USDC » @rjs 
+$33.40 USDC » @stealthyz 
+$33.40 USDC » @Saintcode_ 
+$33.40 USDC » @KingNFT 
+$33.40 USDC » poirots @Davide Silva, @resende, @naps62 )
+$33.40 USDC » @teawaterwire 
+$16.70 USDC » @fs0c 
+
+🏁 Findings summary
+---------------------------
+High risk findings: 14 total, 4 unique
+Med risk findings: 31 total, 8 unique
+Gas findings: 15 
+QA findings: 34
+
+Awards will be distributed on Polygon within the next 1-2 weeks. Congratulations, everyone! 💸 💸 💸
+
+*If you participated in this contest and don’t see your name on this list, please wait until the report is published and the findings repo is made public to check on your submissions.*
+
+{Reactions}
+🎉 
+
+[01/20/2023 20:12] chaduke#3730
+did I violate any rules in my submission (like too many submissions)? I remember I worked hard, but get no rewards 😦
+
+
+[01/20/2023 20:13] chaduke#3730
+Just want to make sure to avoid mistakes twice, not a big deal othewise, it has been fun.
+
+
+[01/20/2023 20:14] chaduke#3730
+@Jay | C4
+
+
+[01/20/2023 20:16] cloudellie
+You should be able to get answers to that question once the repo is made public.
+
+{Reactions}
+thankyou 
+
+[01/21/2023 02:42] chaduke#3730
+@CloudEllie | C4thanks
+
+
+[01/21/2023 02:42] evan#9648
+Hey, can I dm the judge for this contest? I just found out that I only received 1/6 the amount of another warden for the same vulnerability. If there's something wrong with my report, I would like to know so I don't make the same mistake again.
+
+
+[01/21/2023 02:43] chaduke#3730
+@evanthe one whose writing is included in the report will receive higher reward
+
+
+[01/21/2023 02:43] chaduke#3730
+maybe that is one reason
+
+
+[01/21/2023 02:43] chaduke#3730
+?
+
+
+[01/21/2023 02:44] evan#9648
+yea, and I think the judge can cut the reward by 1/2 or 1/4 if he thinks the report lacks detail. but I recall I did put in some effort writing that report
+
+
+[01/21/2023 02:45] chaduke#3730
+@evanmaybe this can help:
+
+
+[01/21/2023 02:46] chaduke#3730
+"Judges choose the best QA report and best Gas report, each of which earns the same 30% share bonus as described under "High and Medium Risk bugs.""
+
+
+[01/21/2023 02:47] chaduke#3730
+"For each unique High or Medium finding, the submission selected for inclusion in the audit report receives a 30% share bonus."
+
+{Reactions}
+👍 
+
+[01/21/2023 02:48] evan#9648
+"However, any submissions which do not identify or effectively rationalize the top identified severity case may be judged as “partial credit” and may have their shares in that finding’s pie divided by 2 or 4 at judge’s sole discretion (e.g. 50% or 25% of the shares of a satisfactory submission in the duplicate set)"
+
+
+[01/21/2023 02:49] evan#9648
+thx! I think I understand why i only got 1/6 now
+
+
+[01/21/2023 02:49] evan#9648
+but man i only got 1/4 of my reward, that's rough... my report can't be that bad 😂
+
+
+[01/21/2023 02:50] chaduke#3730
+I worked hard on this project, I got zero 🙂
+
+
+[01/21/2023 02:50] chaduke#3730
+so you are actually pretty good
+
+
+[01/21/2023 02:50] evan#9648
+I did see your name here:
+https://github.com/code-423n4/code423n4.com/pull/6898/files
+
+{Embed}
+https://github.com/code-423n4/code423n4.com/pull/6898/files
+Update Leaderboard by liveactionllama · Pull Request #6898 · code-4...
+Code4rena - ARCHIVE-Q4-2022 - backed-papr-dec16 [1053313491987087451].txt_Files/98446738-1A1F9
+
+
+[01/21/2023 02:51] evan#9648
+maybe it's a mistake?
+
+
+[01/21/2023 02:54] chaduke#3730
+@evan
+
+
+[01/21/2023 03:01] chaduke#3730
+Is that for a different project?
+
+
+[01/21/2023 03:04] evan#9648
+sry i was afk. judging by the time of PR, it's probably for this contest.
+
+
+[01/21/2023 03:20] chaduke#3730
+the above link is for prep-dec09. I think I found the same thing there
+
+
+[01/21/2023 03:20] chaduke#3730
+@evan
+
+
+[01/21/2023 03:21] chaduke#3730
+I have not found the file for this project yet
+
+
+[01/21/2023 04:22] evan#9648
+ah I think it's combined for the 2 contests
+
+
+[01/24/2023 09:13] elyx0
+https://twitter.com/code4rena/status/1616551714294988800 Where can I read the high/med ? Besides the gist
+
+{Embed}
+Code4rena (@code4rena)
+https://twitter.com/code4rena/status/1616551714294988800
+🏁 Findings summary:
+
+High risk: 14 total, 4 unique
+Medium risk: 31 total, 8 unique
+Gas findings: 15
+QA reports: 34
+
+Read more: https://t.co/IGTipmtG3g (2/2)
+Twitter
+
+
+[01/30/2023 17:35] ladboy233
+Need to wait until the report coming out bro.
+
+
+==============================================================
+Exported 114 message(s)
+==============================================================
